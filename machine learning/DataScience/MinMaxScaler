@@ -1,0 +1,18 @@
+from sklearn import datasets
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import MinMaxScaler
+
+data = datasets.load_iris()
+X = data.data
+Y = data.target
+
+
+for i in range (150):
+    print(X[i],'->', Y[i])
+
+scaler = MinMaxScaler()
+X_Scaled = scaler.fit_transform(X)
+np.set_printoptions(precision=3,floatmode="fixed")
+for i in range (150):
+    print(X_Scaled[i],'->', Y[i])
