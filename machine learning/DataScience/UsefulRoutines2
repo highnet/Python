@@ -1,0 +1,9 @@
+import numpy as np
+import wget
+# load a data set
+# DATA_URL = "https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data"
+# wget.download(DATA_URL,"./auto.csv")
+
+from sklearn import datasets
+diabetes = datasets.load_diabetes()
+from sklearn.model_selection import train_test_split
