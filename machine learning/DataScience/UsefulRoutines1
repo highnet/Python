@@ -1,0 +1,22 @@
+import numpy as np
+import csv
+from pandas import read_csv
+import json
+
+values = 1
+#csv (database)
+with open('testfile.csv','r') as csvfile:
+    data = csv.reader(csvfile, delimiter = ';')
+    for row in data:
+        values.append(row)
+#(csv) should the header need to be ignored
+# values = values[1:]
+
+#numpy (numbers)
+# arr = np.array(values).astype(np,float)
+
+#pandas
+# df = read_csv('testfile.csv')
+
+with open('data.txt') as json_file:
+    data = json.load(json_file)
