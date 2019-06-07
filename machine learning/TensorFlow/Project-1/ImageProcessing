@@ -1,0 +1,13 @@
+import tensorflow as tf
+from PIL import Image
+import numpy as np
+
+with tf.Session() as sess:
+    img = Image.open("cat.jpg")
+    img.load()
+
+    img_data = np.asarray(img, dtype="int32")
+
+    img_tensor = tf.convert_to_tensor(img_data, dtype=tf.int32)
+    res = sess.run(img_tensor)
+    print("Tensor Rank: {}".format(sess.run(tf.rank(img_data))))
