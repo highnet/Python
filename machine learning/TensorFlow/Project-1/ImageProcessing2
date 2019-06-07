@@ -1,0 +1,11 @@
+import tensorflow as tf
+
+with tf.Session() as sess:
+    img = tf.image.decode_jpeg(tf.read_file("cat.jpg"))
+    print("Tensor Rank: {}".format(sess.run(tf.rank(img))))
+    print("Tensor Shape: {}".format((sess.run(tf.shape(img)))))
+    img_content = img.eval()
+    sess.run(img)
+    for i in range(256):
+        for j in range (256):
+            print("RGB Value of pixel (x:",i," y:",j,") is ",img_content[i][j])
