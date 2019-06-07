@@ -1,0 +1,14 @@
+import tensorflow as tf
+import numpy as np
+my_tensor = tf.Variable([[1,2,3],[4,5,6]],name="var1")
+my_second_tensor = tf.assign(my_tensor, [[0,0,7],[0,0,8]])
+
+with tf.Session() as sess:
+    sess.run(tf.global_variables_initializer())
+    print(sess.run(my_tensor))
+    t = np.array([2])
+    my_tensor = my_tensor * t
+    my_tensor = tf.square(my_tensor) / 4
+    my_tensor = my_tensor - 1
+    print(sess.run(my_tensor))
+    print(sess.run(my_second_tensor))
