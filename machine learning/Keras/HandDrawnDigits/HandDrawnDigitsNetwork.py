@@ -1,4 +1,3 @@
-# Plot ad hoc mnist instances
 import matplotlib.pyplot as plt
 from keras.datasets import mnist
 from keras.models import Sequential
